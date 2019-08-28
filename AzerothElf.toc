@@ -3,7 +3,7 @@
 ## Notes-zhCN:艾泽拉斯精灵。
 ## Author: Redheat
 ## DefaultState: enabled
-## SavedVariables: Redheat
-
-AzerothElf.lua
-AzerothElf_OptionsFrame.xml
+## SavedVariablesPerCharacter: CURRENT_THEME
+## Version:0.0.1
+theme\*\config.lua
+core\AzerothElf.lua

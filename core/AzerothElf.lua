@@ -5,53 +5,14 @@
 -- Time: 15:09
 -- To change this template use File | Settings | File Templates.
 --
-local AEF_config = {
-    name = "default",
-    events = {
-        [0] = {
-            event = "AUCTION_HOUSE_CLOSED",
-            sounds = {
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\sounds\\dps1.ogg",
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\sounds\\dps2.ogg",
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\sounds\\dps3.ogg",
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\sounds\\dps4.ogg",
-            },
-            img = {
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\img\\bottom.tga",
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\img\\robert.tga",
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\img\\yuri.tga",
-            },
-            text = {
-                "66666666",
-                "xxxxxxxx",
-                "admin"
-            }
-        },
-        [1] = {
-            event = "AUCTION_HOUSE_SHOW",
-            sounds = {
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\sounds\\dps1.ogg",
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\sounds\\dps2.ogg",
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\sounds\\dps3.ogg",
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\sounds\\dps4.ogg",
-            },
-            img = {
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\img\\bottom.tga",
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\img\\robert.tga",
-                "Interface\\AddOns\\AzerothElf\\theme\\default\\img\\yuri.tga",
-            },
-            text = {
-                "66666666",
-                "xxxxxxxx",
-                "admin"
-            }
-        },
-    }
-}
+local addonName, addonTable = ...
 local ANIM_DURATION = 14
 local frame = CreateFrame("Frame")
 local AZEROTH_ELF_ADDON_PREFIX = "AEF"
 local DROP_SIDE = { "LEFT", "RIGHT", "BOTTOM" }
+local BIG_BARRAGE = false
+local AEF_config = addonTable.AEF_config
+local CURRENT_THEME = ""
 local function playAEFSound(soundFile)
     PlaySoundFile(soundFile)
 end
@@ -66,9 +27,10 @@ end
 
 local function createAnimationFrame(texture_file, initial_delay_s, side)
     local anim_frame = CreateFrame("Frame", "AzerothElf_Frame", UIParent)
-    local h = anim_frame:GetParent():GetHeight()
-    local w = h / 2
-    local offset_x = h / 2
+    local height = anim_frame:GetParent():GetHeight()
+    local h = height / 2
+    local w = height / 2
+    local offset_x = height / 2
     local offset_y = 0
     local anchor_point = ""
 
@@ -76,10 +38,11 @@ local function createAnimationFrame(texture_file, initial_delay_s, side)
         anchor_point = "RIGHT"
     elseif side == "BOTTOM" then
         anchor_point = "TOP"
-        w = anim_frame:GetParent():GetWidth()
-        h = w / 4
+        local width = anim_frame:GetParent():GetWidth()
+        w = width / 4
+        height = w
         offset_x = 0
-        offset_y = h
+        offset_y = height * 1.5
     else
         anchor_point = "LEFT"
         offset_x = offset_x * -1
@@ -177,8 +140,18 @@ local function eventHandler(events_conf)
     end
     if tableHasKey(events_conf, "text") then
         local text = events_conf.text
-        local textFrame = createTextScroll(85, randItem(DROP_SIDE), UIParent:GetHeight() * 0.618, randItem(text))
-        textFrame:Show()
+        local textFrame = ""
+        if BIG_BARRAGE then
+            for i = 0, UIParent:GetWidth() do
+                if ((i % 35) == 0) then
+                    textFrame = createTextScroll(math.random(70,90),randItem(DROP_SIDE), i,string.rep(randItem(text),math.random(2,7)))
+                    textFrame:Show()
+                end
+            end
+        else
+            textFrame = createTextScroll(85, randItem(DROP_SIDE), UIParent:GetHeight() * 0.83, randItem(text))
+            textFrame:Show()
+        end
     end
 end
 
