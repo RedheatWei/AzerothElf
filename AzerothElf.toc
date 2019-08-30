@@ -1,9 +1,16 @@
 ## Interface: 81000
-## Title: |cff9900CC[AzerothElf]|r |cff00ccff艾泽拉斯精灵|r
-## Notes-zhCN:艾泽拉斯精灵。
+## Title: |cff9900CC[other]|r |cff00ccff艾泽拉斯精灵核心库|r
+## Notes-zhCN:艾泽拉斯精灵核心库。
 ## Author: Redheat
 ## DefaultState: enabled
-## SavedVariablesPerCharacter: CURRENT_THEME
+## SavedVariables: AzerothElfVariables
+## OptionalDeps: Ace3
+## X-Embeds: Ace3
 ## Version:0.0.1
-theme\*\config.lua
-core\AzerothElf.lua
+
+embeds.xml
+enUS.lua
+zhCN.lua
+
+Core\Func.lua
+Core\Core.lua
