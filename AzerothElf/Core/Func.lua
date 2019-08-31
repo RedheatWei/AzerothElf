@@ -13,8 +13,8 @@ local function playAEFSound(soundFile)
     PlaySoundFile(soundFile)
 end
 
-local function randItem(l)
-    return l[math.random(#l)]
+local function randItem(item)
+    return item[math.random(#item)]
 end
 
 local function tableHasKey(table, key)
@@ -124,14 +124,17 @@ local function createTextScroll(font_size, direction, y_offset, text,anim_durati
     return textFrame
 end
 
-local function eventHandler(events_conf,drop_side,big_barrage,profile)
+local function eventHandler(events_conf)
+    local drop_side = events_conf["dropSode"]
+    local big_barrage = events_conf["bigBarrage"]
+    local anim_duration = events_conf["animDuration"]
     if tableHasKey(events_conf, "sounds") then
         local sounds = events_conf.sounds
         playAEFSound(randItem(sounds))
     end
     if tableHasKey(events_conf, "img") then
         local img = events_conf.img
-        local anim_frame = createAnimationFrame(randItem(img), math.random(), randItem(drop_side),profile["animDuration"])
+        local anim_frame = createAnimationFrame(randItem(img), math.random(), randItem(drop_side),anim_duration)
         anim_frame:Show()
     end
     if tableHasKey(events_conf, "text") then
@@ -140,12 +143,12 @@ local function eventHandler(events_conf,drop_side,big_barrage,profile)
         if big_barrage then
             for i = 0, UIParent:GetWidth() do
                 if ((i % 35) == 0) then
-                    textFrame = createTextScroll(math.random(70,90),randItem(drop_side), i,string.rep(randItem(text),math.random(2,7)))
+                    textFrame = createTextScroll(math.random(70,90),randItem(drop_side), i,string.rep(randItem(text),math.random(2,7)),anim_duration)
                     textFrame:Show()
                 end
             end
         else
-            textFrame = createTextScroll(85, randItem(drop_side), UIParent:GetHeight() * 0.83, randItem(text),profile["animDuration"])
+            textFrame = createTextScroll(85, randItem(drop_side), UIParent:GetHeight() * 0.83, randItem(text),anim_duration)
             textFrame:Show()
         end
     end
