@@ -5,7 +5,7 @@
 -- Time: 18:57
 -- To change this template use File | Settings | File Templates.
 --
-AzerothElfConfig = {
+AzerothElfConfig["AEFTheme_Default"] = {
     events = {
         [0] = {
             event = "AUCTION_HOUSE_CLOSED",

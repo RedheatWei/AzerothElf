@@ -1,9 +1,0 @@
-## Interface: 81000
-## Title: |cff9900CC[AEF]|r |cff00ccff艾泽拉斯精灵测试主题|r
-## Notes-zhCN:艾泽拉斯精灵测试主题。
-## Author: Redheat
-## LoadOnDemand: 1
-## RequiredDeps: AzerothElf
-## Version:0.0.1
-
-config.lua

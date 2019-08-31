@@ -155,3 +155,4 @@ local function eventHandler(events_conf)
 end
 T["eventHandler"] = eventHandler
 T["starts_with"] = starts_with
+T["tableHasKey"] = tableHasKey
