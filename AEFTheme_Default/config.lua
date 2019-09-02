@@ -35,21 +35,6 @@ AzerothElfConfig["AEFTheme_Default"] = {
                 "66666666",
             }
         },
---        {
---            event = "PLAYER_ENTERING_WORLD",
---            sounds = {
---                "Interface\\AddOns\\AEFTheme_Default\\sounds\\小霸王开始游戏.ogg",
---                "Interface\\AddOns\\AEFTheme_Default\\sounds\\新闻联播.ogg",
---            },
---            img = {
---                "Interface\\AddOns\\AEFTheme_Default\\img\\哈士奇.tga",
---            },
---            text = {
---                "66666666",
---                "xxxxxxxx",
---                "卧槽"
---            }
---        },
         {
             event = "BOSS_KILL",
             sounds = {
@@ -62,18 +47,6 @@ AzerothElfConfig["AEFTheme_Default"] = {
                 "66666666",
                 "卧槽",
                 "黑手别摸"
-            }
-        },
-        {
-            event = "ACHIEVEMENT_EARNED",
-            sounds = {
-                "Interface\\AddOns\\AEFTheme_Default\\sounds\\愤怒的小鸟通关.ogg",
-            },
-            img = {
-                "Interface\\AddOns\\AEFTheme_Default\\img\\哈士奇.tga",
-            },
-            text = {
-                "66666666",
             }
         },
         {

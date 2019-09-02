@@ -1,4 +1,4 @@
-## Interface: 81000
+## Interface: 11302
 ## Title-enUS:|cff9900CC[AEF]|r |cff00ccff AzerothElf Core Lib|r
 ## Title-zhCN:|cff9900CC[AEF]|r |cff00ccff艾泽拉斯精灵核心库|r
 ## Notes-zhCN:艾泽拉斯精灵核心库。
