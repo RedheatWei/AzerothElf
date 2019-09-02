@@ -29,7 +29,7 @@ AzerothElfConfig["AEFTheme_Default"] = {
                 "Interface\\AddOns\\AEFTheme_Default\\sounds\\大圣出场.ogg",
             },
             img = {
-                "Interface\\AddOns\\AEFTheme_Default\\img\\哈士奇.tga",
+                "Interface\\AddOns\\AEFTheme_Default\\img\\羊驼.tga",
             },
             text = {
                 "66666666",
@@ -56,7 +56,7 @@ AzerothElfConfig["AEFTheme_Default"] = {
                 "Interface\\AddOns\\AEFTheme_Default\\sounds\\卡丁车胜利.ogg",
             },
             img = {
-                "Interface\\AddOns\\AEFTheme_Default\\img\\哈士奇.tga",
+                "Interface\\AddOns\\AEFTheme_Default\\img\\羊驼.tga",
             },
             text = {
                 "66666666",
@@ -93,9 +93,6 @@ AzerothElfConfig["AEFTheme_Default"] = {
             sounds = {
                 "Interface\\AddOns\\AEFTheme_Default\\sounds\\妲己.ogg",
             },
-            img = {
-                "Interface\\AddOns\\AEFTheme_Default\\img\\哈士奇.tga",
-            },
             text = {
                 "我的钱多的能买下整个藏宝海湾",
             }
@@ -120,7 +117,6 @@ AzerothElfConfig["AEFTheme_Default"] = {
             },
             img = {
                 "Interface\\AddOns\\AEFTheme_Default\\img\\哈士奇.tga",
-
             },
             text = {
                 "快跑吧小姑娘，快跑",
@@ -130,6 +126,9 @@ AzerothElfConfig["AEFTheme_Default"] = {
             event = "NEW_MOUNT_ADDED",
             sounds = {
                 "Interface\\AddOns\\AEFTheme_Default\\sounds\\筋斗云.ogg",
+            },
+            img = {
+                "Interface\\AddOns\\AEFTheme_Default\\img\\哈士奇.tga",
             },
             text = {
                 "快开车",
