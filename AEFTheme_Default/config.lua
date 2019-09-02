@@ -8,29 +8,25 @@
 AzerothElfConfig["AEFTheme_Default"] = {
     events = {
         [0] = {
-            event = "AUCTION_HOUSE_CLOSED",
+            event = "PLAYER_DEAD",
             sounds = {
-                "Interface\\AddOns\\AEFTheme_Default\\sounds\\dps1.ogg",
-                "Interface\\AddOns\\AEFTheme_Default\\sounds\\dps2.ogg",
-                "Interface\\AddOns\\AEFTheme_Default\\sounds\\dps3.ogg",
-                "Interface\\AddOns\\AEFTheme_Default\\sounds\\dps4.ogg",
+                "Interface\\AddOns\\AEFTheme_Default\\sounds\\超级玛丽死亡.ogg",
+                "Interface\\AddOns\\AEFTheme_Default\\sounds\\周星驰大笑.ogg",
             },
             img = {
                 "Interface\\AddOns\\AEFTheme_Default\\img\\1.tga",
             },
             text = {
                 "66666666",
-                "xxxxxxxx",
-                "卧槽"
+                "卧槽",
+                "gg",
+                "game over "
             }
         },
         [1] = {
-            event = "AUCTION_HOUSE_SHOW",
+            event = "PLAYER_LEVEL_UP",
             sounds = {
-                "Interface\\AddOns\\AEFTheme_Default\\sounds\\dps1.ogg",
-                "Interface\\AddOns\\AEFTheme_Default\\sounds\\dps2.ogg",
-                "Interface\\AddOns\\AEFTheme_Default\\sounds\\dps3.ogg",
-                "Interface\\AddOns\\AEFTheme_Default\\sounds\\dps4.ogg",
+                "Interface\\AddOns\\AEFTheme_Default\\sounds\\大圣出场.ogg",
             },
             img = {
                 "Interface\\AddOns\\AEFTheme_Default\\img\\1.tga",

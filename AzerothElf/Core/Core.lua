@@ -114,7 +114,7 @@ function AzerothElf:GetToggleBigBarrage(_)
 end
 
 function AzerothElf:RegisterEvents()
-    local aefConfig = self.db.profile.aefConfig[self.db.profile.theme]
+    local aefConfig = AzerothElfConfig[self.db.profile.theme]
     if aefConfig ~= nil then
         for _, value in pairs(aefConfig.events) do
             value["dropSode"], value["bigBarrage"], value["animDuration"] = self.db.global.dropSode, self.db.profile.bigBarrage, self.db.profile.animDuration
@@ -124,7 +124,7 @@ function AzerothElf:RegisterEvents()
 end
 
 function AzerothElf:UnRegisterEvents()
-    local aefConfig = self.db.profile.aefConfig[self.db.profile.theme]
+    local aefConfig = AzerothElfConfig[self.db.profile.theme]
     if aefConfig ~= nil then
         for _, value in pairs(aefConfig.events) do
             self:UnregisterEvent(value.event)
@@ -143,7 +143,7 @@ function AzerothElf:ReConfigHandler()
         if loaded == nil then
             UIErrorsFrame:AddMessage(reason, 1.0, 1.0, 1.0, 5.0)
         end
-        self.db.profile.aefConfig[self.db.profile.theme] = AzerothElfConfig[self.db.profile.theme]
+--        self.db.profile.aefConfig[self.db.profile.theme] = AzerothElfConfig[self.db.profile.theme]
         self:RegisterEvents()
     end
 end
