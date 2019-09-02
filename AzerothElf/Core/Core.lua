@@ -18,7 +18,7 @@ local defaults = {
         enable = true,
         theme = "AEFTheme_Default",
         bigBarrage = false,
-        animDuration = 14,
+        animDuration = 8,
         aefConfig = {}
     },
 }

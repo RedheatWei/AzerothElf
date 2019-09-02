@@ -24,21 +24,21 @@ end
 local function createAnimationFrame(texture_file, initial_delay_s, side,anim_duration)
     local anim_frame = CreateFrame("Frame", "BearForceOne_Frame", UIParent)
     local height = anim_frame:GetParent():GetHeight()
-    local h = height / 2
-    local w = height / 2
-    local offset_x = height / 2
-    local offset_y = 0
+    local h = height / 4
+    local w = height / 4
+    local offset_x = h
+    local offset_y = h
     local anchor_point = ""
 
     if side == "LEFT" then
         anchor_point = "RIGHT"
     elseif side == "BOTTOM" then
         anchor_point = "TOP"
-        local width = anim_frame:GetParent():GetWidth()
-        w = width / 4
-        height = w
-        offset_x = 0
-        offset_y = height * 1.5
+--        local width = anim_frame:GetParent():GetWidth()
+--        w = height / 4
+--        height = w
+        offset_x = w * 2
+        offset_y = w
     else
         anchor_point = "LEFT"
         offset_x = offset_x * -1
