@@ -221,5 +221,9 @@ AzerothElfConfig["AEFTheme_Default"] = {
             event = "MERCHANT_SHOW",
             description = "打开交易窗口"
         },
+        {
+            event = "PARTY_INVITE_REQUEST",
+            description = "收到队伍邀请"
+        },
     }
 }
